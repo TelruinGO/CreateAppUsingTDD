@@ -11,14 +11,14 @@ function legalInput(inches,format,output){
     if (typeof input === "number"){
         console.log("🟢 inches are a number");
     }    else{
-        console.log("🔴 inches are not a number");
+        console.log("🔴 inches are not a number. (The first input)");
     }
 
     const form = typeof format;
     if(form === "-cm"||form === "-mm"||form === "-m"){
         console.log("🟢 format is legal");
     }    else{
-        console.log("🔴 format is wrong");
+        console.log("🔴 format is wrong. (the second input should be -mm, -cm or -m)");
     }
 
     if(inches != output){
@@ -27,20 +27,22 @@ function legalInput(inches,format,output){
         console.log("🔴 it only returns the number");
     }
 
-    if (form === "-mm" && output === inches*(254/10)){
-        console.log("🟢 conversion is correct");
-    }    else{
-        console.log("🔴 conversion is incorrect");
-    }
-    if (form === "-cm" && output === inches*(254/100)){
-        console.log("🟢 conversion is correct");
-    }    else{
-        console.log("🔴 conversion is incorrect");
-    }
-    if (form === "-m" && output === inches*(254/10000)){
-        console.log("🟢 conversion is correct");
-    }    else{
-        console.log("🔴 conversion is incorrect");
+    if(inches!=0){
+        if (form === "-mm" && output === inches*(254/10)){
+            console.log("🟢 conversion is correct");
+        }    else{
+            console.log("🔴 conversion is incorrect");
+        }
+        if (form === "-cm" && output === inches*(254/100)){
+            console.log("🟢 conversion is correct");
+        }    else{
+            console.log("🔴 conversion is incorrect");
+        }
+        if (form === "-m" && output === inches*(254/10000)){
+            console.log("🟢 conversion is correct");
+        }    else{
+            console.log("🔴 conversion is incorrect");
+        }
     }
     
 }  
@@ -56,5 +58,5 @@ function conversion(inches,format){
     if (format ==="-cm"){form =100}
     if (format ==="-m"){form =10000}
     const metric = inches*254/form;
-    document.getElementById("").innerText = `${inches} inches is ${metric}${format}`
+    document.getElementById("convert").innerText = `${inches} inches is ${metric} ${format.slice(1)}`
 }
