@@ -1,4 +1,4 @@
-// 🟢 🔴 <-- for copying into the script. I should remove this before delivery.
+var arguments = process.argv ;
 if (aruments[2]==="-t"){
     console.log("inputs wrong. .js \"inches\" \"format\" \"-t\"")
 } else if (argument[3]==="-t"){
